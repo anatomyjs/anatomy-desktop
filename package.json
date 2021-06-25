@@ -48,8 +48,8 @@
     "url": "https://anatomyjs.org"
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.erb.ElectronReact",
+    "productName": "AnatomyDesktop",
+    "appId": "org.erb.AnatomyDesktop",
     "files": [
       "dist/",
       "node_modules/",
