@@ -30,18 +30,30 @@
     "workbox-strategies": "^5.1.3",
     "workbox-streams": "^5.1.3"
   },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.16",
+    "@rescripts/rescript-env": "^0.0.14",
+    "@rescripts/utilities": "^0.0.8",
+    "concurrently": "^6.2.0",
+    "electron": "^13.1.4",
+    "electron-builder": "^22.11.7",
+    "electron-is-dev": "^2.0.0",
+    "wait-on": "^5.3.0"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "rescripts start",
+    "build": "rescripts build",
+    "test": "rescripts test",
     "ebuild": "yarn run build && node_modules/.bin/build",
     "dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-    "postinstall": "electron-builder install-app-deps", 
-    "preelectron-pack": "yarn build", 
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "yarn build",
     "electron-pack": "build -mw"
   },
+  "rescripts": [
+    "env"
+  ],
   "author": {
     "name": "Jonny D",
     "email": "anatomyjs@engineer.com",
@@ -104,7 +116,7 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "anatomy-desktop",
+      "owner": "anatomyjs",
       "repo": "anatomy-desktop"
     }
   },
@@ -125,14 +137,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@rescripts/cli": "^0.0.16",
-    "@rescripts/rescript-env": "^0.0.14",
-    "concurrently": "^6.2.0",
-    "electron": "^13.1.4",
-    "electron-builder": "^22.11.7",
-    "electron-is-dev": "^2.0.0",
-    "wait-on": "^5.3.0"
   }
 }
